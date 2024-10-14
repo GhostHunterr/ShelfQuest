@@ -1,4 +1,4 @@
-namespace ShelfQuestWeb.Models
+namespace ShelfQuest.Models
 {
     public class ErrorViewModel
     {

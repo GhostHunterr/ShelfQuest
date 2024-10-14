@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShelfQuestWeb", "ShelfQuestWeb\ShelfQuestWeb.csproj", "{F8D242ED-3387-41F4-84CD-C33A1DEA04BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShelfQuestWeb", "ShelfQuestWeb\ShelfQuestWeb.csproj", "{F8D242ED-3387-41F4-84CD-C33A1DEA04BF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShelfQuest.DataAccess", "ShefQuest.DataAccess\ShelfQuest.DataAccess.csproj", "{B6EAB076-D967-498B-9CF6-E0C73F4DEA4F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShelfQuest.Models", "ShelfQuest.Models\ShelfQuest.Models.csproj", "{FBA48AE7-092F-4955-8A5A-AEB71C9361BD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShelfQuest.Utility", "ShelfQuest.Utility\ShelfQuest.Utility.csproj", "{ED52BEA3-C2B0-4C98-B1C1-AE7B9A10551C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{F8D242ED-3387-41F4-84CD-C33A1DEA04BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8D242ED-3387-41F4-84CD-C33A1DEA04BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8D242ED-3387-41F4-84CD-C33A1DEA04BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6EAB076-D967-498B-9CF6-E0C73F4DEA4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6EAB076-D967-498B-9CF6-E0C73F4DEA4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6EAB076-D967-498B-9CF6-E0C73F4DEA4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6EAB076-D967-498B-9CF6-E0C73F4DEA4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBA48AE7-092F-4955-8A5A-AEB71C9361BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBA48AE7-092F-4955-8A5A-AEB71C9361BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBA48AE7-092F-4955-8A5A-AEB71C9361BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBA48AE7-092F-4955-8A5A-AEB71C9361BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED52BEA3-C2B0-4C98-B1C1-AE7B9A10551C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED52BEA3-C2B0-4C98-B1C1-AE7B9A10551C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED52BEA3-C2B0-4C98-B1C1-AE7B9A10551C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED52BEA3-C2B0-4C98-B1C1-AE7B9A10551C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using ShelfQuestWeb.Models;
+using ShelfQuest.Models;
 using System.Diagnostics;
 
 namespace ShelfQuestWeb.Controllers
