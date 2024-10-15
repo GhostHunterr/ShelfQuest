@@ -1,19 +1,21 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ShelfQuest.DataAccess.Data;
+using ShelfQuest.DataAccess.Repository;
+using ShelfQuest.DataAccess.Repository.IRepository;
 using ShelfQuest.Models;
 
 namespace ShelfQuestWeb.Controllers
 {
     public class CategoryController : Controller
     {
-        private readonly ApplicationDbContext _db;
-        public CategoryController(ApplicationDbContext db) 
+        private readonly ICategoryRepository _categoryRepository;
+        public CategoryController(ICategoryRepository categoryRepository)
         {
-            _db = db;
+            _categoryRepository = categoryRepository;
         }
         public IActionResult Index()
         {
-            List<Category> objCategoryList = _db.Categories.ToList();
+            List<Category> objCategoryList = _categoryRepository.GetAll().ToList();
             return View(objCategoryList);
         }
 
@@ -25,14 +27,14 @@ namespace ShelfQuestWeb.Controllers
         [HttpPost]
         public IActionResult Create(Category obj)
         {
-            if(obj.DisplayOrder.ToString() == obj.Name)
-            { 
+            if (obj.DisplayOrder.ToString() == obj.Name)
+            {
                 ModelState.AddModelError("Name", "Name and Display Order cannot be of same Value.");
             }
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                _db.Categories.Add(obj);
-                _db.SaveChanges();
+                _categoryRepository.Add(obj);
+                _categoryRepository.Save();
                 TempData["success"] = "Category created Successfully";
                 return RedirectToAction("Index", "Category");
             }
@@ -41,13 +43,13 @@ namespace ShelfQuestWeb.Controllers
         }
 
         public IActionResult Edit(int? id)
-            {
+        {
             if (id == null || id == 0)
             {
                 return NotFound();
             }
 
-            Category? categoryFromDb = _db.Categories.Find(id);
+            Category? categoryFromDb = _categoryRepository.GetFirstorDefault(u => u.Id == id);
 
             if (categoryFromDb == null)
             {
@@ -62,22 +64,22 @@ namespace ShelfQuestWeb.Controllers
         {
             if (ModelState.IsValid)
             {
-                _db.Categories.Update(obj);
-                _db.SaveChanges();
+                _categoryRepository.Update(obj);
+                _categoryRepository.Save();
                 TempData["success"] = "Category updated Successfully";
                 return RedirectToAction("Index", "Category");
             }
 
             return View(obj);
         }
-           public IActionResult Delete(int? id)
+        public IActionResult Delete(int? id)
         {
             if (id == null || id == 0)
             {
                 return NotFound();
             }
 
-            Category? categoryFromDb = _db.Categories.Find(id);
+            Category? categoryFromDb = _categoryRepository.GetFirstorDefault(u => u.Id == id);
 
             if (categoryFromDb == null)
             {
@@ -90,13 +92,13 @@ namespace ShelfQuestWeb.Controllers
         [HttpPost, ActionName("Delete")]
         public IActionResult DeletePOST(int? id)
         {
-            Category? obj = _db.Categories.Find(id);
-            if(obj == null)
+            Category? obj = _categoryRepository.GetFirstorDefault(u => u.Id == id);
+            if (obj == null)
             {
                 return NotFound();
             }
-            _db.Categories.Remove(obj);
-            _db.SaveChanges();
+            _categoryRepository.Remove(obj);
+            _categoryRepository.Save();
             TempData["success"] = "Category deleted Successfully";
             return RedirectToAction("Index", "Category");
         }
