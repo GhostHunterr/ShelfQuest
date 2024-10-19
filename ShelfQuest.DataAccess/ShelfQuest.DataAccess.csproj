@@ -20,4 +20,5 @@
     <ProjectReference Include="..\ShelfQuest.Utility\ShelfQuest.Utility.csproj" />
   </ItemGroup>
 
+
 </Project>

@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ShefQuest.DataAccess\ShelfQuest.DataAccess.csproj" />
+    <ProjectReference Include="..\ShelfQuest.DataAccess\ShelfQuest.DataAccess.csproj" />
     <ProjectReference Include="..\ShelfQuest.Models\ShelfQuest.Models.csproj" />
     <ProjectReference Include="..\ShelfQuest.Utility\ShelfQuest.Utility.csproj" />
   </ItemGroup>

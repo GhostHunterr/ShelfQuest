@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ShelfQuest.DataAccess.Data;
 
+
 #nullable disable
 
 namespace ShelfQuest.DataAccess.Migrations
