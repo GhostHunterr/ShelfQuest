@@ -5,7 +5,7 @@ VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShelfQuestWeb", "ShelfQuestWeb\ShelfQuestWeb.csproj", "{F8D242ED-3387-41F4-84CD-C33A1DEA04BF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShelfQuest.DataAccess", "ShefQuest.DataAccess\ShelfQuest.DataAccess.csproj", "{B6EAB076-D967-498B-9CF6-E0C73F4DEA4F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShefQuest.DataAccess", "ShefQuest.DataAccess\ShefQuest.DataAccess.csproj", "{B6EAB076-D967-498B-9CF6-E0C73F4DEA4F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShelfQuest.Models", "ShelfQuest.Models\ShelfQuest.Models.csproj", "{FBA48AE7-092F-4955-8A5A-AEB71C9361BD}"
 EndProject
