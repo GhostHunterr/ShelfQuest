@@ -30,7 +30,7 @@ namespace ShelfQuest.Models
 
         //Bulk Price
         [Required]
-        [Display(Name = "Preice for 1-50")]
+        [Display(Name = "Price for 1-50")]
         [Range(1,1000)]
         public double Price { get; set; }
         [Required]
@@ -38,7 +38,7 @@ namespace ShelfQuest.Models
         [Range(1,1000)]
         public double Price50 { get; set; }
         [Required]
-        [Display(Name = "List Price for 100+")]
+        [Display(Name = "Price for 100+")]
         [Range(1,1000)]
         public double Price100 { get; set; }
         

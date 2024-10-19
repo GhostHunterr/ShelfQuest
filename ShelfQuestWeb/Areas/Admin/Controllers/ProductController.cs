@@ -26,7 +26,7 @@ namespace ShelfQuestWeb.Areas.Admin.Controllers
             return View(obj);
         }
 
-        public IActionResult Create()
+        public IActionResult Upsert(int? id)
         {
 
             ProductVM ProductView = new()
@@ -36,14 +36,14 @@ namespace ShelfQuestWeb.Areas.Admin.Controllers
                     Text = u.Name,
                     Value = u.Id.ToString()
                 }),
-                Product = new(),
-
+                //Create : Update
+                Product = (id == 0 || id == null) ? new() : _unitOfWork.Product.GetFirstorDefault(u => u.Id == id),
             };
             return View(ProductView);
         }
 
         [HttpPost]
-        public IActionResult Create(ProductVM productVM)
+        public IActionResult UpSert(ProductVM productVM, IFormFile? file)
         {
             if (ModelState.IsValid)
             {
@@ -64,36 +64,36 @@ namespace ShelfQuestWeb.Areas.Admin.Controllers
             }
         }
 
-        public IActionResult Edit(int? id)
-        {
-            if (id == null || id == 0)
-            {
-                return NotFound();
-            }
+        //public IActionResult Edit(int? id)
+        //{
+        //    if (id == null || id == 0)
+        //    {
+        //        return NotFound();
+        //    }
 
-            Product? obj = _unitOfWork.Product.GetFirstorDefault(u => u.Id == id);
+        //    Product? obj = _unitOfWork.Product.GetFirstorDefault(u => u.Id == id);
 
-            if (obj == null)
-            {
-                return NotFound();
-            }
+        //    if (obj == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            return View(obj);
-        }
+        //    return View(obj);
+        //}
 
-        [HttpPost]
-        public IActionResult Edit(Product obj)
-        {
-            if (ModelState.IsValid)
-            {
-                _unitOfWork.Product.Update(obj);
-                _unitOfWork.Save();
-                TempData["success"] = "Product Updated Successfully.";
-                return RedirectToAction("Index", "Product");
-            }
+        //[HttpPost]
+        //public IActionResult Edit(Product obj)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        _unitOfWork.Product.Update(obj);
+        //        _unitOfWork.Save();
+        //        TempData["success"] = "Product Updated Successfully.";
+        //        return RedirectToAction("Index", "Product");
+        //    }
 
-            return View(obj);
-        }
+        //    return View(obj);
+        //}
 
         public IActionResult Delete(int? id)
         {
